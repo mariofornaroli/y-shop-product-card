@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #4b4b4b;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-size: 16px;
+    background: #353b3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-container {
+    position: relative;
+    background-color: #fff;
+    width: 380px;
+    height: 450px;
+    overflow: hidden;
+    box-shadow: 10px 10px 60px 0 rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.img-container {
+    width: 100%;
+    height: 75%;
+    background-image: url(./images/img4.jpg);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: height linear 0.3s, background-size linear 0.4s;
+}
+
+.item-container:hover .img-container {
+    height: 50%;
+    background-size: 60%;
+}
+
+.body-container {
+    padding: 8px 24px;
+}
+
+.main-info {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "title price"
+    "name price";
+    grid-gap: 20px;
+}
+
+.title {
+    grid-area: title;
+}
+
+.name {
+    grid-area: name;
+    padding-left: 16px;
+}
+
+.price {
+    grid-area: price;
+    justify-self: end;
+}
+
+.title,
+.price {
+    font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.additional-info {
+    padding: 32px 16px;
+    text-transform: uppercase;
+}
+
+.additional-info p {
+    font-size: 0.7em;
+    margin-bottom: 16px;
+}
+
+.additional-info p.label-info {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+/* Colors */
+
+.colors button {
+    width: 16px;
+    height: 16px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    border: 1px solid #777;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.colors button:hover {
+    transform: scale(1.2);
+}
+
+#gray {
+    background-color: #222;
+}
+#blue {
+    background-color: #3397ae;
+}
+#white {
+    background-color: #f9f9f9;
+}
+#red {
+    background-color: #ec2d34;
+}
+
+/* Color changes --> Images changes */
+
+body.gray .img-container {
+    background-image: url(./images/img1.jpg);
+}
+body.blue .img-container {
+    background-image: url(./images/img2.jpg);
+}
+body.white .img-container {
+    background-image: url(./images/img3.jpg);
+}
+body.red .img-container {
+    background-image: url(./images/img4.jpg);
+}
+
+/* Color changes --> Price color changer */
+body.gray .price {
+    color: #222;
+}
+body.blue .price {
+    color: #3397ae;
+}
+body.white .price {
+    color: #777;
+}
+body.red .price {
+    color: #ec2d34;
+}
